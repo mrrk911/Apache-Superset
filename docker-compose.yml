@@ -6,7 +6,7 @@ services:
     ports:
       - "8088:8088"
     environment:
-      - SUPERSET_SECRET_KEY=supersecretkey
+      - SUPERSET_SECRET_KEY='KzrCuBSenoYHNpY9FGEbIiwvCKCGrqTSQAoQrkPsM22Jq8lz7yP0vjVI'
     depends_on:
       - db
       - redis
