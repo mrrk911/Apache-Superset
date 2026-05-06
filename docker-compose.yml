@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  superset:
+    image: apache/superset:latest
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=supersecretkey
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB=superset
+      POSTGRES_USER=superset
+      POSTGRES_PASSWORD=superset
+
+  redis:
+    image: redis:latest
